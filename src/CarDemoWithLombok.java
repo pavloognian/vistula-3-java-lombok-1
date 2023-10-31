@@ -2,7 +2,7 @@ import lombok.*;
 
 @Getter
 @Setter
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@EqualsAndHashCode(of = {"brand"})
 @ToString(exclude = {"quantity"})
 @AllArgsConstructor
 class CarWithLombok {
@@ -18,7 +18,7 @@ class CarWithLombok {
 public class CarDemoWithLombok {
     public static void main(String[] args) {
         CarWithLombok CarWithLombok1 = new CarWithLombok("Volkswagen", "Lenovo", "green", 2002, 1000, 10);
-        CarWithLombok CarWithLombok2 = new CarWithLombok("GLC", "Mercedes", "blue", 2023, 200_000, 3);
+        CarWithLombok CarWithLombok2 = new CarWithLombok("GLC", "Lenovo", "blue", 2023, 200_000, 3);
         System.out.println(CarWithLombok1);
         System.out.println(CarWithLombok2);
         System.out.println(CarWithLombok1.getColor());
